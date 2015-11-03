@@ -16,9 +16,9 @@ if __name__=='__main__':
     key='4b130e3d0fa202cb8499327de4ce0bcc'
     api='http://www.tuling123.com/openapi/api?key='+key+'&info='
     while True:
-        info=input('我：')
+        info=input('Me：')
         request=api+urllib.parse.quote(info)
         response=getHtml(request)
         dic_=json.loads(response.decode())
         #print(request)
-        print('机器人：'+dic_['text'])
+        print('Robot：'+dic_['text'])
