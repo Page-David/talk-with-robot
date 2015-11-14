@@ -1,0 +1,39 @@
+
+<html>
+	<head>
+			<title>talk with robot</title>
+	</head>
+	<img>
+		{% if retext %}
+		<p>{{retext}}</p>
+		{% endif %}
+        {% if list %}
+            {% for post in list%}
+            <div><a href="{{post.detailurl}}" title="{{post.source}}">{{post.article}}</a></div>
+            {% endfor %}
+        {% endif %}
+        {% if reurl %}
+            <div><a href="{{reurl[0]}}">{{reurl[1]}}</a></div>
+        {%endif%}
+        {% if retrain %}
+            {% for post in retrain%}
+            <div>{{post.trainnum}}</div>
+            <div><img src="{{post.icon}}">{{post.start}}->{{post.terminal}}</img></div>
+            <div>出发时刻：{{post.starttime}} 到达时刻：{{post.endtime}}</div>
+            <div><a href="{{post.detailurl}}">详情点击</a></div>
+            {% endfor %}
+        {% endif %}
+        {% if redish %}
+            {% for i,post in redish%}
+            <div>做法{{i+1}}</div>
+            <div>配料：{{post.info}}</div>
+            <img src="{{post.icon}}"></img>
+            <div><a href="{{post.detailurl}}">详情点击</a></div>
+            {% endfor %}
+        {% endif %}
+		<form method="POST" action="/">
+    			<input type="text" name="text"/>
+   			<input type="submit" Value="Yes"/>
+		</form>
+	</body>
+</html>
